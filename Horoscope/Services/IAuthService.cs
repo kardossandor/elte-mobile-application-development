@@ -7,4 +7,5 @@ public interface IAuthService
     Task SignOutAsync();
     Task<bool> IsSignedInAsync();
     Task<string?> GetIdTokenAsync();
+    Task<string?> GetEmailAsync();
 }

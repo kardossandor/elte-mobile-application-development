@@ -53,6 +53,9 @@ public class AuthService : IAuthService
 
     public async Task<string?> GetIdTokenAsync()
         => await SecureStorage.GetAsync(TokenKey);
+    
+    public async Task<string?> GetEmailAsync()
+        => await SecureStorage.GetAsync(EmailKey);
 
     private static async Task<string> ReadFirebaseErrorAsync(HttpResponseMessage resp)
     {
@@ -73,7 +76,6 @@ public class AuthService : IAuthService
             // ignore parse error, fallback below
         }
 
-        // fallback: just return raw text if we couldn’t parse
         return $"Auth failed: {text}";
     }
 

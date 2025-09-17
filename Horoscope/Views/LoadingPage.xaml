@@ -1,0 +1,15 @@
+<ContentPage
+    x:Class="Horoscope.Views.LoadingPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="White"
+    Title="Loading">
+
+    <Grid>
+        <ActivityIndicator IsRunning="True"
+                           IsVisible="True"
+                           WidthRequest="40" HeightRequest="40"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center" />
+    </Grid>
+</ContentPage>

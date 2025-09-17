@@ -1,72 +1,72 @@
 <ContentPage
-    x:Class="Horoscope.Views.LoginPage"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Login">
+       x:Class="Horoscope.Views.LoginPage"
+       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       Title="Login">
 
-    <Grid RowDefinitions="Auto,*">
-        <!-- tap to dismiss keyboard -->
-        <Grid.GestureRecognizers>
-            <TapGestureRecognizer Tapped="OnBackgroundTapped"/>
-        </Grid.GestureRecognizers>
+       <Grid RowDefinitions="Auto,*">
+              <!-- tap to dismiss keyboard -->
+              <Grid.GestureRecognizers>
+                     <TapGestureRecognizer Tapped="OnBackgroundTapped"/>
+              </Grid.GestureRecognizers>
 
-        <VerticalStackLayout Padding="24"
-                             Spacing="12">
-            <Label Text="Welcome"
-                   FontSize="24"
-                   HorizontalOptions="Center"/>
+              <VerticalStackLayout Padding="24"
+                                   Spacing="12">
+                     <Label Text="Welcome"
+                            FontSize="24"
+                            HorizontalOptions="Center"/>
 
-            <Entry x:Name="EmailEntry"
-                   Placeholder="Email"
-                   Keyboard="Email"
-                   HeightRequest="44"
-                   ReturnType="Next"/>
+                     <Entry x:Name="EmailEntry"
+                            Placeholder="Email"
+                            Keyboard="Email"
+                            HeightRequest="44"
+                            ReturnType="Next"/>
 
-            <Label x:Name="EmailErrorLabel"
-                   TextColor="Red"
-                   FontSize="12"
-                   IsVisible="False"/>
+                     <Label x:Name="EmailErrorLabel"
+                            TextColor="Red"
+                            FontSize="12"
+                            IsVisible="False"/>
 
-            <Grid HeightRequest="40">
-                <Entry x:Name="PasswordEntry"
-                       Placeholder="Password"
-                       IsPassword="True"
-                       ReturnType="Go"
-                       Completed="OnPasswordCompleted"
-                       TextChanged="OnPasswordTextChanged"/>
+                     <Grid HeightRequest="40">
+                            <Entry x:Name="PasswordEntry"
+                                   Placeholder="Password"
+                                   IsPassword="True"
+                                   ReturnType="Go"
+                                   Completed="OnPasswordCompleted"
+                                   TextChanged="OnPasswordTextChanged"/>
 
-                <ImageButton x:Name="PasswordToggle"
-                             Source="eye.png"
-                             WidthRequest="24"
-                             HeightRequest="24"
-                             HorizontalOptions="End"
-                             VerticalOptions="Center"
-                             BackgroundColor="Transparent"
-                             Padding="8"
-                             IsVisible="False"
-                             Clicked="OnPasswordToggleClicked"/>
-            </Grid>
+                            <ImageButton x:Name="PasswordToggle"
+                                         Source="eye.png"
+                                         WidthRequest="24"
+                                         HeightRequest="24"
+                                         HorizontalOptions="End"
+                                         VerticalOptions="Center"
+                                         BackgroundColor="Transparent"
+                                         Padding="8"
+                                         IsVisible="False"
+                                         Clicked="OnPasswordToggleClicked"/>
+                     </Grid>
 
-            <Label x:Name="PasswordErrorLabel"
-                   TextColor="Red"
-                   FontSize="12"
-                   IsVisible="False"/>
+                     <Label x:Name="PasswordErrorLabel"
+                            TextColor="Red"
+                            FontSize="12"
+                            IsVisible="False"/>
 
-            <Button x:Name="SignInButton"
-                    Text="Sign In"
-                    Clicked="OnSignInClicked"/>
+                     <Button x:Name="SignInButton"
+                             Text="Sign In"
+                             Clicked="OnSignInClicked"/>
 
-            <Button x:Name="SignUpButton"
-                    Text="Create Account"
-                    Clicked="OnSignUpClicked"/>
+                     <Button x:Name="SignUpButton"
+                             Text="Create Account"
+                             Clicked="OnSignUpClicked"/>
 
-            <ActivityIndicator x:Name="BusyIndicator"
-                               IsRunning="False"
-                               IsVisible="False"/>
+                     <ActivityIndicator x:Name="BusyIndicator"
+                                        IsRunning="False"
+                                        IsVisible="False"/>
 
-            <Label x:Name="ErrorLabel"
-                   TextColor="Red"
-                   IsVisible="False"/>
-        </VerticalStackLayout>
-    </Grid>
+                     <Label x:Name="ErrorLabel"
+                            TextColor="Red"
+                            IsVisible="False"/>
+              </VerticalStackLayout>
+       </Grid>
 </ContentPage>
