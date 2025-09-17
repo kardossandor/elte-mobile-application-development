@@ -1,0 +1,92 @@
+# Build results
+bin/
+obj/
+out/
+Debug/
+Release/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+# Visual Studio / Rider / VSCode
+.vs/
+.idea/
+*.swp
+*.tmp
+*.log
+*.vspscc
+*.vssscc
+*.code-workspace
+
+# Generated files
+*.exe
+*.dll
+*.pdb
+*.cache
+*.mdb
+
+# NuGet
+*.nupkg
+*.snupkg
+*.nuspec
+project.lock.json
+project.fragment.lock.json
+artifacts/
+packages/
+# except build/, which is used as an MSBuild target.
+!packages/build/
+
+# MAUI / Xamarin specifics
+*.apk
+*.aab
+*.ap_
+*.ipa
+*.app
+*.dSYM/
+*.xcarchive/
+*.xcuserstate
+*.xcworkspace/
+*.xcuserdata/
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+*.DS_Store
+
+# iOS / Xcode
+DerivedData/
+Pods/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# Android
+local.properties
+.gradle/
+*.gradle
+.gradle/
+*.keystore
+*.jks
+
+# Config / secrets
+*.config
+*.secrets.json
+appsettings.*.json
+*.env
+*.key
+*.pem
+
+# JetBrains Rider
+.idea/
+*.iml
+
+# VSCode
+.vscode/
+.history/
+
+# Other
+node_modules/
+npm-debug.log
+yarn-error.log
