@@ -1,10 +1,15 @@
-﻿namespace Horoscope;
+﻿using Horoscope.Services;
+
+namespace Horoscope;
 
 public partial class App : Application
 {
-    public App()
+    private readonly IAuthService _auth;
+
+    public App(IAuthService auth)
     {
         InitializeComponent();
+        _auth = auth;
     }
 
     protected override Window CreateWindow(IActivationState? activationState)
@@ -13,7 +18,10 @@ public partial class App : Application
 
         window.Created += async (s, e) =>
         {
-            await Shell.Current.GoToAsync("//login");
+            if (await _auth.IsSignedInAsync())
+                await Shell.Current.GoToAsync("///dashboard");
+            else
+                await Shell.Current.GoToAsync("///login");
         };
 
         return window;

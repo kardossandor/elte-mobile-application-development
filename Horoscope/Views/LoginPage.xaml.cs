@@ -104,7 +104,7 @@ public partial class LoginPage : ContentPage
     private string GetEmail() => EmailEntry.Text?.Trim() ?? "";
     private string GetPwd() => PasswordEntry.Text ?? "";
 
-    private async void OnPasswordCompleted(object sender, EventArgs e)
+    private void OnPasswordCompleted(object sender, EventArgs e)
         => OnSignInClicked(sender, e);
 
     private void ShowError(string message)
