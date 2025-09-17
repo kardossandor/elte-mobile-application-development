@@ -1,3 +1,5 @@
+using Horoscope.Services;
+
 namespace Horoscope.Views;
 
 public partial class DashboardPage : ContentPage

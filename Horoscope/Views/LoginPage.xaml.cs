@@ -1,9 +1,12 @@
+using Horoscope.Services;
+
 namespace Horoscope.Views;
 
 public partial class LoginPage : ContentPage
 {
     private readonly IAuthService _auth;
     private bool _isBusy;
+    private bool _passwordVisible;
 
     public LoginPage(IAuthService auth)
     {
@@ -38,6 +41,8 @@ public partial class LoginPage : ContentPage
 
         ClearError();
 
+        if (!ValidateForm()) return;
+
         var email = GetEmail();
         var pwd = GetPwd();
 
@@ -64,6 +69,37 @@ public partial class LoginPage : ContentPage
         }
     }
 
+    private bool ValidateForm()
+    {
+        bool valid = true;
+
+        var email = GetEmail();
+        var pwd = GetPwd();
+
+        if (string.IsNullOrWhiteSpace(email) || !System.Text.RegularExpressions.Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+        {
+            EmailErrorLabel.Text = "Please enter a valid email address.";
+            EmailErrorLabel.IsVisible = true;
+            valid = false;
+        }
+        else
+        {
+            EmailErrorLabel.IsVisible = false;
+        }
+
+        if (string.IsNullOrWhiteSpace(pwd) || pwd.Length < 6)
+        {
+            PasswordErrorLabel.Text = "Password must be at least 6 characters.";
+            PasswordErrorLabel.IsVisible = true;
+            valid = false;
+        }
+        else
+        {
+            PasswordErrorLabel.IsVisible = false;
+        }
+
+        return valid;
+    }
 
     private string GetEmail() => EmailEntry.Text?.Trim() ?? "";
     private string GetPwd() => PasswordEntry.Text ?? "";
@@ -78,6 +114,18 @@ public partial class LoginPage : ContentPage
             ErrorLabel.Text = message;
             ErrorLabel.IsVisible = true;
         });
+    }
+
+    private void OnPasswordToggleClicked(object sender, EventArgs e)
+    {
+        _passwordVisible = !_passwordVisible;
+        PasswordEntry.IsPassword = !_passwordVisible;
+        PasswordToggle.Source = _passwordVisible ? "eye_closed.png" : "eye.png";
+    }
+
+    private void OnPasswordTextChanged(object sender, TextChangedEventArgs e)
+    {
+        PasswordToggle.IsVisible = !string.IsNullOrEmpty(e.NewTextValue);
     }
 
     private void OnBackgroundTapped(object sender, TappedEventArgs e)

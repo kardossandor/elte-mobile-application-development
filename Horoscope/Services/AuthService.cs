@@ -1,3 +1,7 @@
+using System.Net.Http.Json;
+using Horoscope.Constants;
+using Horoscope.Models;
+
 namespace Horoscope.Services;
 
 public class AuthService : IAuthService

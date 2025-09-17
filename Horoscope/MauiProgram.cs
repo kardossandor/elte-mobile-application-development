@@ -1,4 +1,7 @@
-﻿namespace Horoscope;
+﻿using CommunityToolkit.Maui;
+using Horoscope.Services;
+
+namespace Horoscope;
 
 public static class MauiProgram
 {
